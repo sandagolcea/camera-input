@@ -72,11 +72,21 @@ window.onload = function(){
   function snapshot() {
     if (localMediaStream) {
       ctx.drawImage(video, 0, 0);
+      // ctx.drawImage(video, 50, 50, 100, 120, 10, 0, 250, 250);
       // "image/webp" works in Chrome.
       // Other browsers will fall back to image/png.
       document.querySelector('img').src = canvas.toDataURL('image/webp');
+      /*
+      var img = document.createElement('img');
+      img.src = 'img_the_scream.jpg';
+      img.onload = function () {
+      var c = document.getElementById('myCanvas');
+      var ctx = c.getContext('2d');
+      ctx.drawImage(img,10,10,250,277);
+      */
     }
   }
+
   var button = document.querySelector('#capture-button');
   // button.addEventListener('click', snapshot, false);
   // video.addEventListener('click', snapshot, false);
@@ -87,9 +97,12 @@ window.onload = function(){
           video.src = window.URL.createObjectURL(stream);
           localMediaStream = stream;
           // video.play();
-          snapshot();
       }, errorCallback);
     }
   };  
-
+  var buttonsnap = document.querySelector('#snapshot-button');
+  buttonsnap.onclick = function () { 
+    console.log('snapshot clicked');
+    snapshot();
+  }
 };
