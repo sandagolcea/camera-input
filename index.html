@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+</head>
+<body>
+  <h5>image from camera</h5>
+  <input type="file" id='photo' class="myClass" name="file" accept="image/*" capture="camera"><br>
+
+  <h5>video from camcorder</h5>
+  <input type="file" accept="video/*;capture=camcorder"></input><br>
+
+  <h5>video</h5>
+  <video id="screenshot-stream" class="videostream" autoplay=""></video>
+  <img id="screenshot" src="">
+  <canvas id="screenshot-canvas" style="display:none;"></canvas>
+  <p>
+    <button id="capture-button">Capture video</button>
+    <button id="stop-button">Stop</button>
+  </p>
+</body>
+</html>

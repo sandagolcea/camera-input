@@ -1,0 +1,8 @@
+.videostream, #cssfilters-stream, #screenshot {
+  width: 307px;
+  height: 250px;
+}
+.videostream, #cssfilters-stream {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid #ccc;
+}
