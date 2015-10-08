@@ -36,13 +36,14 @@ window.onload = function(){
   var video = document.querySelector('video');
   var button = document.querySelector('#capture-button');
   var localMediaStream = null;
+  var img = document.querySelector('img');
 
   navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
   function snapshot() {
     if (localMediaStream) {
       context.drawImage(video, 0, 0);
-      document.querySelector('img').src = canvas.toDataURL('image/webp');
+      img.src = canvas.toDataURL('image/webp');
     }
   }
 
@@ -50,8 +51,15 @@ window.onload = function(){
     console.log('Error: ', err);
   };
 
+  var toggleViews = function(){
+    img.style.display = img.style.display === 'none' ? '' : 'none';
+    canvas.style.display = canvas.style.display === 'none' ? '' : 'none';
+  }
   button.onclick = function () { 
     console.log('button clicked');
+     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+
+     toggleViews();
      if (navigator.getUserMedia) {
         navigator.getUserMedia({video: true}, function(stream) {
           video.src = window.URL.createObjectURL(stream);
@@ -62,6 +70,7 @@ window.onload = function(){
   };  
   var buttonsnap = document.querySelector('#snapshot-button');
   buttonsnap.onclick = function () { 
+    toggleViews();
     console.log('snapshot clicked');
     snapshot();
   }
