@@ -46,7 +46,6 @@ window.onload = function(){
       img.src = canvas.toDataURL('image/webp');
     }
   }
-
   var errorCallback = function(err) {
     console.log('Error: ', err);
   };
@@ -55,23 +54,23 @@ window.onload = function(){
     img.style.display = img.style.display === 'none' ? '' : 'none';
     canvas.style.display = canvas.style.display === 'none' ? '' : 'none';
   }
-  button.onclick = function () { 
-    console.log('button clicked');
-     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
-     toggleViews();
-     if (navigator.getUserMedia) {
-        navigator.getUserMedia({video: true}, function(stream) {
-          video.src = window.URL.createObjectURL(stream);
-          localMediaStream = stream;
-          // video.play();
+  button.onclick = function () { 
+    toggleViews();
+    if (navigator.getUserMedia) {
+      navigator.getUserMedia({video: true}, function(stream) {
+        video.src = window.URL.createObjectURL(stream);
+        localMediaStream = stream;
       }, errorCallback);
     }
-  };  
+  };
+
   var buttonsnap = document.querySelector('#snapshot-button');
   buttonsnap.onclick = function () { 
     toggleViews();
-    console.log('snapshot clicked');
     snapshot();
+    //Stopping the video, review the info below pls:
+    // var track = localMediaStream.getTracks()[0];
+    // track.stop();
   }
 };

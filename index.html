@@ -7,18 +7,9 @@
   <script src="./script.js"></script>
 </head>
 <body>
-  <h5>image from camera</h5>
-  <input type="file" id='photo' class="myClass" name="file" accept="image/*" capture="camera"><br>
-<!-- 
-  <h5>video</h5>
-  <video  width="307" height="250" id="screenshot-stream" class="videostream" autoplay=""></video>
-  <img  width="640" height="480" id="screenshot" src="">
-  <canvas  width="640" height="480" id="screenshot-canvas" style="display:none;"></canvas>
- -->
-
     <h5>video</h5>
     <video  width="640" height="480" id="screenshot-stream" class="videostream" autoplay="" style="z-index: 1; position: absolute; top: 0px; left: 0px;"></video>
-    <img  width="640" height="480" id="screenshot" src="" style="z-index: 2; position: absolute; top: 0px; left: 0px;">
+    <img  width="640" height="480" id="screenshot" src="" style="display:none; z-index: 2; position: absolute; top: 0px; left: 0px;">
     <canvas  width="640" height="480" id="screenshot-canvas" style="display:none; z-index: 2; position: absolute; top: 0px; left: 0px;"></canvas>
    <p>
    <br><br><br><br><br><br><br><br><br><br><br><br>
@@ -26,5 +17,8 @@
     <button id="capture-button">Capture video</button>
     <button id="snapshot-button">Snapshot</button>
   </p>
+  <br>
+  <h5>image from camera</h5>
+  <input type="file" id='photo' class="myClass" name="file" accept="image/*" capture="camera"><br>
 </body>
 </html>
