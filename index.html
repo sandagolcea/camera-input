@@ -7,18 +7,16 @@
   <script src="./script.js"></script>
 </head>
 <body>
-    <h5>video</h5>
-    <video  width="640" height="480" id="screenshot-stream" class="videostream" autoplay="" style="z-index: 1; position: absolute; top: 0px; left: 0px;"></video>
-    <img  width="640" height="480" id="screenshot" src="" style="display:none; z-index: 2; position: absolute; top: 0px; left: 0px;">
-    <canvas  width="640" height="480" id="screenshot-canvas" style="display:none; z-index: 2; position: absolute; top: 0px; left: 0px;"></canvas>
-   <p>
-   <br><br><br><br><br><br><br><br><br><br><br><br>
-   <br><br><br><br><br><br><br><br><br><br><br><br>
-    <button id="capture-button">Capture video</button>
-    <button id="snapshot-button">Snapshot</button>
-  </p>
-  <br>
-  <h5>image from camera</h5>
+    <h4>Video</h4>
+    <button id="capture-button">Start video</button>
+    <button id="snapshot-button">Take snapshot</button>
+    <div id="video-capture-container">
+      <video  width="320" height="240" id="screenshot-stream" class="videostream" autoplay="" style="z-index: 1; position: absolute; top: 50px; left: 200px;"></video>
+      <img  width="320" height="240" id="screenshot" src="" style="display:none; z-index: 2; position: absolute; top: 50px; left: 200px;">
+      <canvas  width="320" height="240" id="screenshot-canvas" style="display:none; z-index: 2; position: absolute; top: 50px; left: 200px;"></canvas>
+    </div>
+  <br><br><br><br><br><br><br><br>
+  <h4>Upload Image from Computer</h4>
   <input type="file" id='photo' class="myClass" name="file" accept="image/*" capture="camera"><br>
 </body>
 </html>
