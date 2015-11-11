@@ -8,4 +8,6 @@ Additionally there is a widget to upload a photo from local storage and show it 
 - goto `localhost:8080`
 
 ##Notes
-- !Please note that the video stream does not work if serving the file at "file:///Users..", you will need to serve the file. I use [http-server](https://www.npmjs.com/package/http-server) npm package for this purpose.
+!! Please note that the video stream does not work if serving the file at "file:///" 
+You will need to serve the file from e.g. "localhost:8080". 
+I use the [http-server](https://www.npmjs.com/package/http-server) npm package for this purpose.
